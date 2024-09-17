@@ -14,14 +14,6 @@
             --background-color: #ecf0f1;
             --text-color: #34495e;
         }
-
-@media screen and (max-width: 500px) {
-  div {
-    width: 400px;
-  }
-}
-
-        
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
@@ -149,6 +141,27 @@ nav .title, nav ul {
 }
 
 
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+ 
+
+
+
+
 
         @media screen and (max-width: 768px) {
     nav {
@@ -177,6 +190,10 @@ nav .title, nav ul {
 }
 
 
+
+
+
+
         .hero {
     background-image: url('images/maxime-v.jpg'); /* Path to your background image */
     background-size: cover; /* Ensure the background image covers the entire element */
@@ -187,10 +204,6 @@ nav .title, nav ul {
     margin-top: 60px; /* Ensure it sits below the header */
     color: white; /* Text color for contrast */
 }
-
-
-
-
 
 
         .hero h1 {
@@ -211,6 +224,10 @@ nav .title, nav ul {
         margin-top: 175px; /* Adjust this value to shift the h1 down */
     }
 }
+
+
+
+
 
 
 
