@@ -105,9 +105,11 @@ nav .title, nav ul {
 
 
         .logo-title {
+            display: -webkit-flex; /* For older versions of WebKit-based browsers */
+            display: -ms-flexbox; /* For older versions of IE */
             display: flex;
-            align-items: center;
         }
+        
         nav ul {
             list-style-type: none;
             padding: 0;
