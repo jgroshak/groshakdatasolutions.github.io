@@ -536,7 +536,7 @@ nav .title, nav ul {
 <script>
     document.addEventListener('scroll', function() {
         const logo = document.querySelector('.logo-ani');
-        if (window.scrollY > 100) { // Adjust the value as needed
+        if (window.scrollY > 90) { // Adjust the value as needed
             logo.classList.add('logo-slide');
         } else {
             logo.classList.remove('logo-slide');
@@ -550,7 +550,7 @@ nav .title, nav ul {
         const scrollPosition = window.scrollY;
 
         // If user scrolls down 100px or more, add the class to hide the elements
-        if (scrollPosition > 100) {
+        if (scrollPosition > 90) {
             nav.classList.add('nav-hidden');
         } else {
             nav.classList.remove('nav-hidden');
