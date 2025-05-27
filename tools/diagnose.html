@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Minute Business Data & Operations Diagnosis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .form-content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .question {
+            margin-bottom: 25px;
+        }
+        
+        .question h4 {
+            margin-bottom: 12px;
+            color: #34495e;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f0ff;
+        }
+        
+        .option.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .option input[type="radio"] {
+            margin-right: 12px;
+            margin-top: 2px;
+        }
+        
+        .option label {
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .calculate-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: block;
+            margin: 40px auto;
+            transition: transform 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .calculate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .results {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .score-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .diagnosis {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .next-steps {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .form-content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>5-Minute Business Diagnosis</h1>
+            <p>Identify opportunities for data solutions and process improvements</p>
+        </div>
+        
+        <div class="form-content">
+            <form id="diagnosisForm">
+                <!-- Data & Analytics Foundation -->
+                <div class="section">
+                    <h3>📊 Data & Analytics Foundation</h3>
+                    
+                    <div class="question">
+                        <h4>How confident are you in your business data accuracy?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q1" value="4" id="q1-4">
+                                <label for="q1-4">Very confident - We have real-time, accurate data across all systems</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="3" id="q1-3">
+                                <label for="q1-3">Somewhat confident - Most data is reliable but some gaps exist</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="2" id="q1-2">
+                                <label for="q1-2">Not very confident - Data exists but consistency/accuracy is questionable</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="1" id="q1-1">
+                                <label for="q1-1">No confidence - We're flying blind or relying on gut feelings</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q1" value="na" id="q1-na">
+                                <label for="q1-na">N/A - This doesn't apply to our business model</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4>How do you currently make important business decisions?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q2" value="4" id="q2-4">
+                                <label for="q2-4">Data-driven analysis with clear metrics and trends</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="3" id="q2-3">
+                                <label for="q2-3">Mix of data and experience/intuition</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="2" id="q2-2">
+                                <label for="q2-2">Mostly experience and gut feelings</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="1" id="q2-1">
+                                <label for="q2-1">Reactive - decisions made when problems arise</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q2" value="na" id="q2-na">
+                                <label for="q2-na">N/A - This doesn't apply to our business model</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operational Efficiency -->
+                <div class="section">
+                    <h3>⚡ Operational Efficiency</h3>
+                    
+                    <div class="question">
+                        <h4>How much time does your team spend on manual, repetitive tasks daily?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q3" value="4" id="q3-4">
+                                <label for="q3-4">Less than 1 hour - Most processes are automated</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="3" id="q3-3">
+                                <label for="q3-3">1-3 hours - Some manual work but manageable</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="2" id="q3-2">
+                                <label for="q3-2">3-6 hours - Significant time on repetitive tasks</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="1" id="q3-1">
+                                <label for="q3-1">6+ hours - Most work involves manual processes</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q3" value="na" id="q3-na">
+                                <label for="q3-na">N/A - This doesn't apply to our business model</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4>How quickly can you generate reports when stakeholders need them?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q4" value="4" id="q4-4">
+                                <label for="q4-4">Instantly - Automated dashboards available 24/7</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="3" id="q4-3">
+                                <label for="q4-3">Within hours - Quick manual compilation</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="2" id="q4-2">
+                                <label for="q4-2">1-3 days - Requires significant manual work</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="1" id="q4-1">
+                                <label for="q4-1">Week+ - Major effort to pull together information</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q4" value="na" id="q4-na">
+                                <label for="q4-na">N/A - We don't generate reports</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology & Integration -->
+                <div class="section">
+                    <h3>🔧 Technology & Integration</h3>
+                    
+                    <div class="question">
+                        <h4>How well do your business systems talk to each other?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q5" value="4" id="q5-4">
+                                <label for="q5-4">Seamlessly - All systems integrated and share data automatically</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="3" id="q5-3">
+                                <label for="q5-3">Mostly connected - Some manual data transfer needed</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="2" id="q5-2">
+                                <label for="q5-2">Partially connected - Significant manual work to sync data</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="1" id="q5-1">
+                                <label for="q5-1">Disconnected - Each system operates in isolation</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q5" value="na" id="q5-na">
+                                <label for="q5-na">N/A - We use only one system or don't have business systems</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4>How do you handle data backup and security?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q6" value="4" id="q6-4">
+                                <label for="q6-4">Automated, secure, regularly tested backup systems</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="3" id="q6-3">
+                                <label for="q6-3">Regular backups but not fully automated</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="2" id="q6-2">
+                                <label for="q6-2">Occasional backups, not systematic</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="1" id="q6-1">
+                                <label for="q6-1">Minimal or no backup strategy</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q6" value="na" id="q6-na">
+                                <label for="q6-na">N/A - We don't store sensitive data</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth & Scalability -->
+                <div class="section">
+                    <h3>📈 Growth & Scalability</h3>
+                    
+                    <div class="question">
+                        <h4>Can your current systems handle 2x your current business volume?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q7" value="4" id="q7-4">
+                                <label for="q7-4">Yes, easily - Built for scale</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="3" id="q7-3">
+                                <label for="q7-3">Probably - Might need minor adjustments</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="2" id="q7-2">
+                                <label for="q7-2">Doubtful - Would require significant changes</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="1" id="q7-1">
+                                <label for="q7-1">No way - Would break under increased load</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q7" value="na" id="q7-na">
+                                <label for="q7-na">N/A - Scaling isn't relevant to our business model</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <h4>How well do you understand your most profitable customers/products?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q8" value="4" id="q8-4">
+                                <label for="q8-4">Crystal clear - Detailed profitability analysis available</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="3" id="q8-3">
+                                <label for="q8-3">Good understanding - Some analysis done</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="2" id="q8-2">
+                                <label for="q8-2">Basic understanding - Rough estimates only</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="1" id="q8-1">
+                                <label for="q8-1">No clear picture - Haven't analyzed profitability</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q8" value="na" id="q8-na">
+                                <label for="q8-na">N/A - We don't have multiple customers/products to analyze</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance & Risk Management -->
+                <div class="section">
+                    <h3>🛡️ Compliance & Risk Management</h3>
+                    
+                    <div class="question">
+                        <h4>How confident are you in your regulatory compliance and audit readiness?</h4>
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" name="q9" value="4" id="q9-4">
+                                <label for="q9-4">Very confident - Automated compliance tracking and reporting</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="3" id="q9-3">
+                                <label for="q9-3">Mostly confident - Manual but systematic approach</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="2" id="q9-2">
+                                <label for="q9-2">Somewhat confident - Ad-hoc compliance efforts</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="1" id="q9-1">
+                                <label for="q9-1">Not confident - Compliance is reactive, not proactive</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="q9" value="na" id="q9-na">
+                                <label for="q9-na">N/A - Our business has minimal regulatory requirements</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="calculate-btn" onclick="calculateScore()">Get My Diagnosis</button>
+            </form>
+
+            <div id="results" class="results">
+                <div class="score-display" id="scoreDisplay"></div>
+                <div class="diagnosis" id="diagnosisTitle"></div>
+                <div class="description" id="diagnosisDescription"></div>
+                <div class="next-steps">
+                    <h4>Ready to improve your operations?</h4>
+                    <p>Contact Groshak Data Solutions to discuss how we can help optimize your business processes and data systems.</p>
+                    <button class="cta-button" onclick="window.open('https://groshakdatasolutions.com/', '_blank')">Get Started Today</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click handlers for options
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Remove selected class from siblings
+                this.parentNode.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to this option
+                this.classList.add('selected');
+            });
+        });
+
+        function calculateScore() {
+            const form = document.getElementById('diagnosisForm');
+            const formData = new FormData(form);
+            
+            let totalScore = 0;
+            let applicableQuestions = 0;
+            
+            // Count responses and calculate score
+            for (let i = 1; i <= 9; i++) {
+                const answer = formData.get(`q${i}`);
+                if (answer && answer !== 'na') {
+                    applicableQuestions++;
+                    totalScore += parseInt(answer);
+                }
+            }
+            
+            if (applicableQuestions === 0) {
+                alert('Please answer at least one question to get your diagnosis.');
+                return;
+            }
+            
+            const maxPossibleScore = applicableQuestions * 4;
+            const percentage = Math.round((totalScore / maxPossibleScore) * 100);
+            
+            displayResults(percentage, totalScore, maxPossibleScore);
+        }
+
+        function displayResults(percentage, score, maxScore) {
+            const resultsDiv = document.getElementById('results');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const diagnosisTitle = document.getElementById('diagnosisTitle');
+            const diagnosisDescription = document.getElementById('diagnosisDescription');
+            
+            scoreDisplay.textContent = `${percentage}%`;
+            
+            let title, description;
+            
+            if (percentage >= 85) {
+                title = "🚀 Data-Driven Leader";
+                description = "Excellent! Your business has strong data foundations and efficient operations. You're ahead of most companies in leveraging data for decision-making. Consider exploring advanced analytics, AI opportunities, and predictive modeling to maintain your competitive advantage.";
+            } else if (percentage >= 70) {
+                title = "📈 Growing Efficiently";
+                description = "Good progress! You're on the right track with solid foundations in place. You have clear opportunities to automate processes, improve data accuracy, and streamline operations for faster growth. Focus on eliminating remaining manual processes and improving system integration.";
+            } else if (percentage >= 50) {
+                title = "⚡ Ready for Transformation";
+                description = "Significant opportunities exist to streamline your operations and make better data-driven decisions. Process automation, system integration, and workflow optimization should be immediate priorities. These improvements could save hours weekly and increase profitability substantially.";
+            } else {
+                title = "🚨 Critical Need";
+                description = "Your business is at risk of being left behind by competitors. Immediate attention to data systems, process automation, and operational efficiency is essential for sustainable growth. The good news? You have the most to gain from data solutions and process improvements.";
+            }
+            
+            diagnosisTitle.textContent = title;
+            diagnosisDescription.textContent = description;
+            
+            resultsDiv.style.display = 'block';
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
