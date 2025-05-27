@@ -11,11 +11,21 @@
             box-sizing: border-box;
         }
         
+        test{
+            --hero-bg-primary: #1a1a1a;
+            --hero-bg-secondary: #2c3e50;
+            --hero-accent: #F5BC13;
+            --hero-accent-secondary: #FA8622;
+
+        }
+
+
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 50%, #2c3e50 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -30,7 +40,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -56,7 +66,7 @@
             padding: 25px;
             background: #f8f9fa;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #f5bc13;
         }
         
         .section h3 {
@@ -72,8 +82,8 @@
         
         .question h4 {
             margin-bottom: 12px;
-            color: #34495e;
-            font-weight: 500;
+            color: #2c3e50;
+            font-weight: 700;
         }
         
         .options {
@@ -94,13 +104,13 @@
         }
         
         .option:hover {
-            border-color: #667eea;
-            background: #f0f0ff;
+            border-color: #F5BC13;
+            background: #fff8e5;
         }
         
         .option.selected {
-            border-color: #667eea;
-            background: #e8eaff;
+            border-color: #F5BC13;
+            background: #fff4cc;
         }
         
         .option input[type="radio"] {
@@ -114,7 +124,7 @@
         }
         
         .calculate-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #F5BC13 0%, #FA8622 100%);
             color: white;
             border: none;
             padding: 15px 40px;
@@ -141,7 +151,7 @@
             display: none;
             margin-top: 40px;
             padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); 
             color: white;
             border-radius: 15px;
             text-align: center;
@@ -175,7 +185,7 @@
         
         .cta-button {
             background: white;
-            color: #667eea;
+            color: #2c3e50;
             border: none;
             padding: 15px 30px;
             border-radius: 50px;
@@ -213,7 +223,7 @@
     <div class="container">
         <div class="header">
             <h1>5-Minute Business Diagnosis</h1>
-            <p>Identify opportunities for data solutions and process improvements</p>
+            <p>Please think carefully about your responses.</p>
         </div>
         
         <div class="form-content">
