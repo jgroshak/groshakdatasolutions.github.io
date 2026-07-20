@@ -4,42 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groshak Data Solutions</title>
-    <link rel="icon" href="images/GDS_logo_favicon.png" type="image/x-icon">
-    
+    <meta name="description" content="Groshak Data Solutions — cybersecurity compliance, self-hosted AI, analytics, and IT infrastructure for growing businesses.">
+    <link rel="icon" href="images/GDS_favicon_dark_tile.png" type="image/png">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  
   "@type": "Organization",
-  
   "name": "Groshak Data Solutions",
-  
   "url": "https://groshakdatasolutions.com",
-  
-  "logo": "https://github.com/jgroshak/groshakdatasolutions.github.io/blob/main/images/GDS_logo.png",
-  
+  "logo": "https://groshakdatasolutions.com/images/GDS_logo.png",
   "description": "Complete tech solutions from cybersecurity to custom AI and analytics.",
-  
   "foundingDate": "2020",
-  
   "sameAs": [
     "https://www.linkedin.com/company/groshak-data-solutions"
   ],
-  
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "customer service",  // Tells Google this is for customer inquiries
-    "areaServed": ["US", "CA", "GB"],          // Now covers all three countries
-    "availableLanguage": "English"      // Languages you support
+    "contactType": "customer service",
+    "areaServed": ["US", "CA", "GB"],
+    "availableLanguage": "English"
   },
-  
-  // RECOMMENDED: Physical location data (even if minimal) - helps with local SEO
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "CA"
   },
-  
-  // VERY IMPORTANT: Your services catalog - helps Google understand what you offer
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Complete tech solutions",
@@ -48,8 +37,8 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Cyber Security Compliance",                    // Specific service name
-          "description": "Ensure that your IT systems and processes meet industry security standards (GDPR, HIPAA, PIPEDA, CCPA/CPRA) and best practices, protecting your data and minimizing risks."  // What this service includes
+          "name": "Cyber Security Compliance",
+          "description": "Ensure that your IT systems and processes meet industry security standards (GDPR, HIPAA, PIPEDA, CCPA/CPRA) and best practices, protecting your data and minimizing risks."
         }
       },
       {
@@ -70,951 +59,1045 @@
       }
     ]
   },
-  
   "knowsAbout": [
     "Cyber Security Compliance",
-    "AI Solutions", 
+    "AI Solutions",
     "IT Infrastructure",
     "APIs",
     "Customer Analytics",
     "Custom Dashboards",
     "Predictive Analytics"
   ],
-  
-    "areaServed": [
-    {
-      "@type": "Country",
-      "name": "United States"
-    },
-    {
-      "@type": "Country", 
-      "name": "Canada"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom"
-    }
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United Kingdom" }
   ]
 }
 </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #F5BC13;
-            --background-color: #ecf0f1;
-            --text-color: #34495e;
-            --hero-bg-primary: #1a1a1a;
-            --hero-bg-secondary: #2c3e50;
-            --hero-accent: #F5BC13;
-            --hero-accent-secondary: #FA8622;
+            --bg: #0D1117;
+            --surface: #151B23;
+            --surface-2: #1B2330;
+            --border: rgba(240, 246, 252, 0.10);
+            --text: #E8EDF4;
+            --text-muted: #9AA6B5;
+            --gold: #F5BC13;
+            --orange: #FA8622;
+            --gold-soft: rgba(245, 188, 19, 0.10);
+            --grad: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            --radius: 14px;
+            --font-display: 'Space Grotesk', 'Inter', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
-        
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        [id] { scroll-margin-top: 90px; }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: var(--font-body);
+            line-height: 1.65;
             margin: 0;
             padding: 0;
-            background: rgba(15, 20, 25, 0.95);
-            color: var(--text-color);
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
         }
-        
+
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+            width: 92%;
+            max-width: 1140px;
+            margin: 0 auto;
         }
-        
+
+        /* ---------- Header ---------- */
         header {
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 0.5rem 0;
-            padding-top: 5px;
-            position: static;
-            width: 100%;
+            position: sticky;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: rgba(13, 17, 23, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .header-container {
+        .header-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: nowrap;
-            padding: 10px 20px;
-        }
-        
-        .logo {
-            height: 60px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        nav .title, nav ul {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-hidden .title, .nav-hidden ul {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        .centered {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .hide-logo {
-            display: none;
-        }
-
-        .logo-ani {
-            height: 100px;
-            width: auto;
-            margin-right: 10px;
-            position: relative;
-            top: auto;
-            left: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            .logo-ani {
-                height: 100px;
-            }
-            .title {
-                font-size: 1rem;
-            }
-        }
-
-        .logo-slide {
-            transform: translateX(-100vw);
+            gap: 16px;
+            padding: 14px 0;
         }
 
         .logo-title {
             display: flex;
             align-items: center;
-            flex-wrap: nowrap;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
+            gap: 12px;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 8px 16px;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
+            color: var(--text);
         }
-        
-        nav ul li a::before {
+
+        .logo {
+            height: 42px;
+            width: auto;
+            display: block;
+        }
+
+        .title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-            transition: left 0.8s ease; /* Slower for better visibility */
+            left: 14px;
+            right: 14px;
+            bottom: 4px;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--grad);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
         }
 
-nav ul li a:hover::before {
-    left: 10%;
-}
+        nav ul li a:hover { color: var(--text); }
+        nav ul li a:hover::after { transform: scaleX(1); }
 
-
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
-            background: rgba(245, 188, 19, 0.1);
-            transform: translateY(-2px);
+        .nav-cta {
+            margin-left: 10px;
+            padding: 9px 18px !important;
+            border-radius: 999px;
+            background: var(--grad);
+            color: #1A1205 !important;
+            font-weight: 600;
         }
+        .nav-cta::after { display: none; }
+        .nav-cta:hover { filter: brightness(1.06); }
 
-        @media screen and (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                
-            }
-
-            .logo-title {
-                margin-bottom: 10px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            nav ul li a {
-                display: block;
-                padding: 10px 0;
-                font-size: 16px;
-            }
-
-            nav ul { display: none; }
-        }
-
+        /* ---------- Hero ---------- */
         .hero {
-            background: linear-gradient(135deg, var(--hero-bg-primary) 0%, var(--hero-bg-secondary) 100%);
             position: relative;
-            text-align: center;
-            padding: 30px 10px 40px;
-            margin-top: 0px;
-            color: white;
             overflow: hidden;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            color: var(--text);
+            padding: 110px 20px 120px;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(44, 62, 80, 0.55) 0%, transparent 60%),
+                var(--bg);
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(245, 188, 19, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(250, 134, 34, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(245, 188, 19, 0.05) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(245, 188, 19, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(250, 134, 34, 0.07) 0%, transparent 45%);
         }
-        
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(245, 188, 19, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245, 188, 19, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 30%, transparent 75%);
+            z-index: 0;
+        }
+
         .hero-particles {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             overflow: hidden;
             z-index: 1;
         }
-        
+
         .particle {
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--hero-accent);
+            background: var(--gold);
             border-radius: 50%;
-            animation: particleFloat 15s linear infinite;
-            opacity: 0.6;
+            animation: particleFloat 16s linear infinite;
+            opacity: 0.5;
         }
-        
-        .particle:nth-child(2n) {
-            background: var(--hero-accent-secondary);
-            animation-duration: 20s;
-            animation-delay: -5s;
-        }
-        
-        .particle:nth-child(3n) {
-            background: var(--secondary-color);
-            animation-duration: 18s;
-            animation-delay: -10s;
-        }
-        
+        .particle:nth-child(2n) { background: var(--orange); animation-duration: 22s; animation-delay: -6s; }
+
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 1000px;
+            max-width: 920px;
             margin: 0 auto;
         }
-        
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(245, 188, 19, 0.06);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero-badge .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--grad);
+        }
+
         .hero h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: white;
-            line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin: 0 0 24px;
+            color: #F6F8FB;
+        }
+
+        .hero h1 .accent {
+            background: var(--grad);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: titleGlow 3s ease-in-out infinite alternate;
+            -webkit-text-fill-color: transparent;
+            color: var(--gold);
         }
-        
+
         .hero p {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             font-weight: 400;
-            max-width: 700px;
+            max-width: 640px;
             margin: 0 auto 40px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.5s forwards;
+            color: var(--text-muted);
         }
-        
+
         .hero-cta {
-            opacity: 0;
-            animation: fadeInUp 1s ease 1s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
-        
+
         .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, var(--hero-accent) 0%, var(--hero-accent-secondary) 100%);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
+            gap: 10px;
+            background: var(--grad);
+            color: #1A1205;
+            padding: 15px 30px;
+            border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 30px rgba(245, 188, 19, 0.3);
-            position: relative;
-            overflow: hidden;
+            font-size: 1.05rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 8px 24px rgba(245, 188, 19, 0.25);
         }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s ease;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
+
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(245, 188, 19, 0.4);
-        }
-        
-        .hero-grid-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(245, 188, 19, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245, 188, 19, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            animation: gridMove 30s linear infinite;
-            z-index: 0;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(245, 188, 19, 0.35);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(10px) rotate(240deg); }
-        }
-        
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) translateX(0px) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes titleGlow {
-            0% { text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
-            100% { text-shadow: 0 4px 30px rgba(245, 188, 19, 0.2); }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(60px, 60px); }
-        }
-
-        @media (max-width: 768px) {
-            
-            
-            .hero-content {
-        transform: translateY(-200px); /* Moves content up by 50px */
-    }
-            
-
-            
-            .hero {
-                padding: 180px 20px 80px;
-                min-height: 70vh;
-            }
-            
-            .hero h1 {
-                margin-top: 50px;
-            }
-            
-            .cta-button {
-                padding: 14px 28px;
-                font-size: 1rem;
-            }
-
-        }
-        
-        #projects {
-            padding: 5px 0;
-            text-align: center;
-        }
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-        .project-card {
-            background: none;
-            box-shadow: none;
-            padding: 5px 0;
-        }
-        .project-card img {
-            display: none;
-        }
-        .project-title {
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 5px;
-        }
-        .project-description {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-            margin-bottom: 5px;
-        }
-        .github-link {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            padding: 8px 16px;
-            background-color: var(--secondary-color);
-            color: white;
-            border-radius: 10px;
+        .cta-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            color: var(--text);
             text-decoration: none;
-        }
-        .github-link:hover {
-            background-color: #FA8622;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: border-color 0.25s ease, background 0.25s ease;
         }
 
-        .business-case {
-            background-color: var(--background-color);
-            border-left: 4px solid var(--secondary-color);
+        .cta-ghost:hover {
+            border-color: var(--gold);
+            background: var(--gold-soft);
+        }
+
+        @keyframes particleFloat {
+            0%   { transform: translateY(105vh) translateX(0); opacity: 0; }
+            10%  { opacity: 0.5; }
+            90%  { opacity: 0.5; }
+            100% { transform: translateY(-80px) translateX(80px); opacity: 0; }
+        }
+
+        /* ---------- Sections ---------- */
+        section.block { padding: 96px 0; }
+
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 56px;
+        }
+
+        .overline {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .section-head h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+            margin: 0 0 16px;
+            color: #F6F8FB;
+        }
+
+        .section-head p {
+            color: var(--text-muted);
+            font-size: 1.08rem;
+            margin: 0;
+        }
+
+        /* ---------- Business cases ---------- */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+            gap: 24px;
+        }
+
+        .case-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 188, 19, 0.35);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .case-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 6px;
+        }
+
+        .case-icon {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-soft);
+            border: 1px solid rgba(245, 188, 19, 0.25);
+            color: var(--gold);
+        }
+        .case-icon svg { width: 22px; height: 22px; }
+
+        .case-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .case-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin: 0 0 10px;
+            color: #F6F8FB;
+        }
+
+        .case-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .case-card > p { margin: 0 0 22px; }
+
+        .case-solution {
+            margin-top: auto;
             padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            background: var(--gold-soft);
+            border-left: 3px solid var(--gold);
         }
 
-        .business-case:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        .case-solution .case-tag {
+            color: var(--gold);
+            margin-bottom: 6px;
         }
 
-        .business-case h2 {
-            font-size: 2.0rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        .case-solution h4 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0 0 8px;
+            color: #F6F8FB;
         }
 
-        .business-case h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-top: 15px;
-            margin-bottom: 10px;
+        .case-solution p { color: #C4CDD8; }
+
+        /* ---------- Services ---------- */
+        .services-band { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 20px;
         }
 
-        .business-case p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: var(--text-color);
+        .service-tile {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 26px 24px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .service-overview {
-            background-color: var(--background-color);
-            padding: 40px 20px;
-            margin: 20px auto;
-            max-width: 1200px;
+        .service-tile:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245, 188, 19, 0.35);
         }
 
-        .service-overview h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .service-tile h3 {
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            font-weight: 600;
+            margin: 0 0 8px;
+            color: var(--gold);
         }
 
-        .service-list {
-            list-style-type: none;
-            padding: 0;
+        .service-tile p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
-        .service-list li {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 10px;
-        }
+        /* ---------- Tools ---------- */
+        .tool-group { margin-bottom: 36px; }
+        .tool-group:last-of-type { margin-bottom: 0; }
 
-        .service-list strong {
-            color: #e4b529;
-            font-size: 1.2em;
-        }
-
-        .tools-overview {
-            background-color: var(--background-color);
-            padding: 35px 20px;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-
-        .tools-overview h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
+        .tool-group h3 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 0 0 16px;
+            text-align: center;
         }
 
         .tools-list {
-            list-style-type: none;
+            list-style: none;
+            margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-        }
-
-        .tools-list li {
             display: flex;
-            align-items: center;
-            font-size: 1rem;
-        }
-
-        .tools-list img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-        }
-
-        @media (max-width: 480px) {
-            .tools-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .contact-section {
-            padding: 30px 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .contact-details {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
         }
 
-        .contact-item {
-            width: 30%;
-            margin-bottom: 10px;
+        .tools-list li {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 15px 7px 8px;
+            border-radius: 999px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: border-color 0.25s ease, transform 0.25s ease;
         }
+
+        .tools-list li:hover {
+            border-color: rgba(245, 188, 19, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .tools-list .icon-tile {
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            background: #F4F6F8;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tools-list img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .tools-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: 36px 0 0;
+        }
+
+        /* ---------- Contact ---------- */
+        .contact-band { background: var(--surface); border-top: 1px solid var(--border); }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: block;
+            text-decoration: none;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px 24px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 188, 19, 0.4);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-soft);
+            border: 1px solid rgba(245, 188, 19, 0.25);
+            color: var(--gold);
+        }
+        .contact-icon svg { width: 22px; height: 22px; }
 
         .contact-item h3 {
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 0 0 8px;
         }
 
-        .contact-item p {
-            font-size: 1.1rem;
+        .contact-item .contact-value {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+            word-break: break-word;
         }
 
-        .contact-item a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .contact-details {
-                flex-direction: column;
-            }
-
-            .contact-item {
-                width: 100%;
-            }
-        }
-
+        /* ---------- Footer ---------- */
         .footer-section {
-            background-color: #050601;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 0.9rem;
+            background: #0A0D12;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 28px 0;
+            font-size: 0.92rem;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .footer-content p {
-            margin: 0;
-            font-size: 1rem;
-        }
+        .footer-content p { margin: 0; }
 
         .footer-links {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 15px;
-        }
-
-        .footer-links li {
-            display: inline;
+            gap: 22px;
         }
 
         .footer-links a {
-            color: white;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            transition: color 0.25s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary-color);
+        .footer-links a:hover { color: var(--gold); }
+
+        /* ---------- Reveal on scroll ---------- */
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .js .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            .footer-content {
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .particle { display: none; }
+            .js .reveal { opacity: 1; transform: none; transition: none; }
+            .case-card, .service-tile, .contact-item, .tools-list li, .cta-button { transition: none; }
+        }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width: 820px) {
+            .header-inner {
                 flex-direction: column;
+                gap: 6px;
+                padding: 12px 0;
             }
-
-            .footer-links {
-                margin-top: 10px;
-            }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 2px; }
+            nav ul li a { padding: 6px 10px; font-size: 0.9rem; }
+            .nav-cta { margin-left: 4px; padding: 7px 15px !important; }
+            .hero { padding: 70px 16px 80px; }
+            section.block { padding: 64px 0; }
+            .case-card { padding: 24px; }
         }
     </style>
 
-    <script>
-        document.addEventListener('scroll', function() {
-            const logo = document.querySelector('.logo-ani');
-            if (window.scrollY > 85) {
-                logo.classList.add('logo-slide');
-            } else {
-                logo.classList.remove('logo-slide');
-            }
-        });
-    </script>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            const scrollPosition = window.scrollY;
-
-            if (scrollPosition > 85) {
-                nav.classList.add('nav-hidden');
-            } else {
-                nav.classList.remove('nav-hidden');
-            }
-        });
-    </script>
-
-    <script>
-        // Create floating particles
-        function createParticles() {
-            const heroParticles = document.querySelector('.hero-particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                heroParticles.appendChild(particle);
-            }
-        }
-
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createParticles);
-    </script>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-    
+
 <body>
     <header>
-        <nav class="container">
-            <div class="logo-title">
-                <a href="#">
-                    <img src="images/GDS_logo.png" alt="Groshak Data Solutions Logo" class="logo-ani">
-                </a>
+        <div class="container header-inner">
+            <a href="#" class="logo-title">
+                <img src="images/GDS_logo_light.png" alt="Groshak Data Solutions Logo" class="logo">
                 <span class="title">Groshak Data Solutions</span>
-            </div>
-            <ul>
-                <li><a href="#business-cases">Business Cases</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#business-cases">Business Cases</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tools">Stack</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
+
     <section class="hero">
         <div class="hero-grid-bg"></div>
         <div class="hero-particles"></div>
         <div class="hero-content">
-            <h1>Complete tech solutions from cybersecurity to custom AI and analytics</h1>
-            <p>Secure your IT systems from top to bottom!</p>
+            <span class="hero-badge"><span class="dot"></span>Cybersecurity &middot; AI &middot; Analytics</span>
+            <h1>Complete tech solutions, from cybersecurity to <span class="accent">custom AI and analytics</span></h1>
+            <p>We design, secure, and automate the systems your business runs on — from compliance and infrastructure to self-hosted AI.</p>
             <div class="hero-cta">
-                <a href="#services" class="cta-button">
+                <a href="#business-cases" class="cta-button">
                     <span>Explore Solutions</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
                 </a>
+                <a href="#contact" class="cta-ghost">Get in touch</a>
             </div>
         </div>
     </section>
 
-    <main class="container">
-   <h2 id="business-cases" class="centered" style="color: white;">Do any of these challenges sound familiar?</h2>
-        <br>
+    <main>
+        <section id="business-cases" class="block">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="overline">Business Cases</span>
+                    <h2>Do any of these challenges sound familiar?</h2>
+                    <p>Real problems we solve for growing businesses — and how we solve them.</p>
+                </div>
 
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Using AI models with Sensitive Data</h2>
-                <p>Your business is unable to leverage the power of AI tools because of the sensitivity of your data.</p>
-                
-                <h2>Solution: Self-Hosted AI Models </h2>
-                <p>Set up your own AI model in-house, so anything like legal, medical, or financial data is completely under your control. This prevents large tech companies (like OpenAI) from stealing your sensitve data.</p>
-            </section>
+                <div class="case-grid">
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Using AI models with sensitive data</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            </div>
+                        </div>
+                        <p>Your business is unable to leverage the power of AI tools because of the sensitivity of your data.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Self-Hosted AI Models</h4>
+                            <p>Set up your own AI model in-house, so sensitive legal, medical, or financial data stays completely under your control — it never leaves your infrastructure or reaches a third-party AI provider.</p>
+                        </div>
+                    </article>
 
-        <br>
-        
-        <content>
-            <section class="business-case">
-                <h2>Challenge: AI Content Relevance</h2>
-                <p>Your business struggles with generic AI-generated content that fails to capture the unique essence of your industry. Off-the-shelf AI solutions produce bland, unremarkable content that doesn't resonate with your target audience.</p>
-                
-                <h2>Solution: Custom AI Model Training for Precise Brand Representation</h2>
-                <p>Develop a tailored AI model that learns and replicates your brand's specific visual language, tone, and content style. By training on proprietary datasets, the AI can generate highly specialized content that authentically represents your brand's unique aesthetic, ensuring consistent and meaningful brand storytelling.</p>
-            </section>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>AI content relevance</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.7a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-2a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+                            </div>
+                        </div>
+                        <p>Your business struggles with generic AI-generated content that fails to capture the unique essence of your industry. Off-the-shelf AI solutions produce bland, unremarkable content that doesn't resonate with your target audience.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Custom AI Model Training for Precise Brand Representation</h4>
+                            <p>Develop a tailored AI model that learns and replicates your brand's specific visual language, tone, and content style. By training on proprietary datasets, the AI can generate highly specialized content that authentically represents your brand's unique aesthetic, ensuring consistent and meaningful brand storytelling.</p>
+                        </div>
+                    </article>
 
-        <br>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Vulnerable systems</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                        </div>
+                        <p>Your distributed workforce relies on unsecured connections and personal devices, creating vulnerabilities that could lead to unauthorized access, malware infections, and compliance failures in your sensitive data environments.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Zero Trust Endpoint Protection</h4>
+                            <p>By implementing enterprise-grade remote access controls, the business can: enforce device compliance before granting network access, prevent unauthorized lateral movement through micro-segmentation, maintain continuous endpoint monitoring for threats, and achieve compliance with remote work security requirements (e.g., NIST, SOC 2).</p>
+                        </div>
+                    </article>
 
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Vulnerable Systems</h2>
-                <p>Your distributed workforce relies on unsecured connections and personal devices, creating vulnerabilities that could lead to unauthorized access, malware infections, and compliance failures in your sensitive data environments.</p> 
-                <h2>Solution: Zero Trust Endpoint Protection</h2>
-                <p>By implementing enterprise-grade remote access controls, the business can: enforce device compliance before granting network access, prevent unauthorized lateral movement through micro-segmentation, maintain continuous endpoint monitoring for threats, and achieve compliance with remote work security requirements (e.g., NIST, SOC 2).</p>
-            </section>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Regulatory compliance</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            </div>
+                        </div>
+                        <p>Your medium-sized business lacks a comprehensive approach to IT security. Different departments use various security measures, leading to inconsistent protection levels, potential compliance violations, and increased risk of data breaches.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Integrated Security Compliance Management</h4>
+                            <p>By adopting this integrated approach, the business can: ensure consistent application of security standards, reduce the risk of data breaches and cyber attacks, simplify compliance with industry regulations (ISO Standards, GDPR, HIPAA, PIPEDA, CCPA/CPRA), improve incident response times and enhance overall data protection and privacy.</p>
+                        </div>
+                    </article>
 
-        <br>
-        
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Regulatory Compliance</h2>
-                <p>Your medium-sized business lacks a comprehensive approach to IT security. Different departments use various security measures, leading to inconsistent protection levels, potential compliance violations, and increased risk of data breaches.</p> 
-                <h2>Solution: Integrated Security Compliance Management</h2>
-                <p>By adopting this integrated approach, the business can: ensure consistent application of security standards, reduce the risk of data breaches and cyber attacks, simplify compliance with industry regulations (ISO Standards, GDPR, HIPAA, PIPEDA, CCPA/CPRA), improve incident response times and enhance overall data protection and privacy.</p>
-            </section>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Cloud dependency</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-.4-9A6 6 0 1 0 6 15.7"/><path d="M12 12v9"/><path d="M8 17l4 4 4-4"/></svg>
+                            </div>
+                        </div>
+                        <p>Your growing business or application relies heavily on major cloud providers like AWS, Azure, or Google Cloud. Escalating costs, complex pricing structures, and underutilized resources are draining your IT budget and limiting your ability to scale effectively.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Hybrid Infrastructure</h4>
+                            <p>Combine secure on-premises infrastructure with targeted cloud services to maximize cost efficiency and control. Keep critical systems and sensitive data in-house while using cloud services only where they add clear value. This hybrid approach delivers automated resource management, enhanced security through direct hardware control, and the flexibility to scale specific services as needed.</p>
+                        </div>
+                    </article>
 
-        <br>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Desynchronization</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+                            </div>
+                        </div>
+                        <p>Your medium-sized business tracks marketing campaigns and sales performance using separate tools, leading to fragmented reporting and difficulties in analyzing the effectiveness of marketing efforts.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>Unified Marketing and Sales Reporting</h4>
+                            <p>Set up an integrated marketing and sales reporting system that combines data from marketing campaigns and sales performance into a single dashboard. Standardizing data collection and reporting allows for a comprehensive view of marketing ROI, better analysis of campaign effectiveness, and more informed decision-making.</p>
+                        </div>
+                    </article>
 
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Cloud Dependency</h2>
-                <p>Your growing business or application relies heavily on major cloud providers like AWS, Azure, or Google Cloud. Escalating costs, complex pricing structures, and underutilized resources are draining your IT budget and limiting your ability to scale effectively.</p>
-                <h2>Solution: Hybrid Infrastructure </h2>
-                <p> Combine secure on-premises infrastructure with targeted cloud services to maximize cost efficiency and control. Keep critical systems and sensitive data in-house while using cloud services only where they add clear value. This hybrid approach delivers automated resource management, enhanced security through direct hardware control, and the flexibility to scale specific services as needed.</p>
-            </section>
-
-        </content>
-
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Desynchronization</h2>
-                <p>Your medium-sized business tracks marketing campaigns and sales performance using separate tools, leading to fragmented reporting and difficulties in analyzing the effectiveness of marketing efforts.</p>
-                <h2>Solution: Unified Marketing and Sales Reporting</h2>
-                <p>Set up an integrated marketing and sales reporting system that combines data from marketing campaigns and sales performance into a single dashboard. Standardizing data collection and reporting allows for a comprehensive view of marketing ROI, better analysis of campaign effectiveness, and more informed decision-making.</p>
-            </section>
-
-        </content>
-
-        <content>
-            <section class="business-case">
-                <h2>Challenge: Inventory Management</h2>
-                <p>Your medium-sized e-commerce business uses separate systems for inventory management and order processing. This disconnection leads to inventory discrepancies and delays in order fulfillment.</p>
-                <h2>Solution: AI Powered Inventory and Order Management</h2>
-                <p>Implement a smart inventory and order management system that links inventory levels with order processing. This can also predict orders based on previous activity. Ensuring real-time inventory updates, accurate order fulfillment, and improved stock management. This means enhanced customer satisfaction and reduced risk of stockouts or overstocking.</p>
-            </section>
-
-        </content>
-
-        <section id="services" class="service-overview">
-            <h2 class="centered">Service Offerings Overview</h2>
-            <ul class="service-list">
-                <li><strong>Cyber Security Compliance:</strong> Ensure that your IT systems and processes meet industry security standards (GDPR, HIPAA, PIPEDA, CCPA/CPRA) and best practices, protecting your data and minimizing risks.</li>
-                <li><strong>AI Solutions:</strong> Custom AI models that generate highly specialized content or for scenarios where you want to ensure the privacy of your internal data.</li>
-                <li><strong>IT Infrastructure:</strong> Setting up and integrating IT systems tailored to your business needs.</li>
-                <li><strong>APIs:</strong> Development, integration, and testing for RESTful and SOAP APIs.</li>
-                <li><strong>Customer Analytics:</strong> Understand your customers' behavior, preferences, and needs, allowing you to provide them with better products and services.</li>
-                <li><strong>Custom Dashboards:</strong> Create custom dashboards that provide you with real-time data and insights, helping you stay on top of your business metrics.</li>
-                <li><strong>Predictive Analytics:</strong> Using advanced statistical techniques to help you forecast future trends and make informed business decisions.</li>
-            </ul>
+                    <article class="case-card reveal">
+                        <div class="case-top">
+                            <div>
+                                <span class="case-tag">Challenge</span>
+                                <h3>Inventory management</h3>
+                            </div>
+                            <div class="case-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 8.3L12 13l8.7-4.7"/><path d="M12 22V13"/></svg>
+                            </div>
+                        </div>
+                        <p>Your medium-sized e-commerce business uses separate systems for inventory management and order processing. This disconnection leads to inventory discrepancies and delays in order fulfillment.</p>
+                        <div class="case-solution">
+                            <span class="case-tag">Solution</span>
+                            <h4>AI-Powered Inventory and Order Management</h4>
+                            <p>Implement a smart inventory and order management system that links inventory levels with order processing. This can also predict orders based on previous activity. Ensuring real-time inventory updates, accurate order fulfillment, and improved stock management. This means enhanced customer satisfaction and reduced risk of stockouts or overstocking.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
-        
-        <section class="tools-overview">
-            <h2 class="centered">Tools & Languages</h2>
-            <ul class="tools-list">
-        <li><img src="images/python-original.svg" alt="Python Logo">Python</li>
-        <li><img src="images/R-original.webp" alt="R Logo">R</li>
-        <li><img src="images/pandas-original.svg" alt="Pandas Logo">Pandas</li>
-        <li><img src="images/NumPy-original.webp" alt="NumPy Logo">NumPy</li>
-        <li><img src="images/SciPy-original.webp" alt="SciPy Logo">SciPy</li>
-        <li><img src="images/Seaborn-original.svg" alt="Seaborn Logo">Seaborn</li>
-        <li><img src="images/Matplotlib-original.png" alt="Matplotlib Logo">Matplotlib</li>
-        <li><img src="images/bokeh-original.webp" alt="Bokeh Logo">Bokeh</li>
-        <li><img src="images/Highcharts-original.webp" alt="Highcharts Logo">Highcharts</li>
-        <li><img src="images/postgresql-original.svg" alt="PostgreSQL Logo">PostgreSQL</li>
-        <li><img src="images/mongoDB-original.webp" alt="MongoDB Logo">MongoDB</li>
-        <li><img src="images/SQlite-original.svg" alt="SQLite Logo">SQLite</li>
-        <li><img src="images/mysql-original.svg" alt="MySQL Logo">MySQL</li>
 
-        <li><img src="images/Scikitlearn-original.svg" alt="Scikit-learn Logo">Scikit-learn</li>
-        <li><img src="images/OpenCV-original.svg" alt="OpenCV Logo">OpenCV</li>
-        <li><img src="images/Tensorflow-orignal.svg" alt="TensorFlow Logo">TensorFlow</li>
-        <li><img src="images/pytorch-original.svg" alt="PyTorch Logo">PyTorch</li>
-        <li><img src="images/apache-spark-original.webp" alt="Apache Spark">Apache Spark</li>
-        <li><img src="images/javascript-original.svg" alt="JavaScript Logo">JavaScript</li>
-        <li><img src="images/php.svg" alt="PHP Logo">PHP</li>
-        <li><img src="images/postman-original.svg" alt="Postman Logo">Postman</li>
-        <li><img src="images/swaggerhub-original.svg" alt="SwaggerHub Logo">SwaggerHub</li>
-        <li><img src="images/docker-orignal.svg" alt="Docker Logo">Docker</li>
-        <li><img src="images/kubernetes-original.webp" alt="Kubernetes Logo">Kubernetes</li>
-        <li><img src="images/apache-cloudstack-orginal.webp" alt="Apache Cloudstack Logo">Apache Cloudstack</li>
-        <li><img src="images/aws_light.svg" alt="AWS Logo">AWS Cloud</li>
-        <li><img src="images/cloudflare.svg" alt="Cloudfare Logo">Cloudflare</li>
-        <li><img src="images/nginx-original.svg" alt="Nginx Logo">Nginx</li>
-        <li><img src="images/bash-orignal.svg" alt="Bash Logo">Bash</li>
-        <li><img src="images/Linux-orignal.svg" alt="Linux Logo">Linux</li>
-        <li><img src="images/django-original.svg" alt="Django Logo">Django</li>
-        <li><img src="images/Flask-original.svg" alt="Flask Logo">Flask</li>
-        <li><img src="images/bootstrap-original.webp" alt="Bootstrap Logo">Bootstrap</li>
-        <li><img src="images/stripe-original.svg" alt="Stripe Logo">Stripe</li>
-        <li><img src="images/html5-original.svg" alt="HTML5 Logo">HTML5</li>
-        <li><img src="images/css3-original.svg" alt="CSS3 Logo">CSS3</li>
-        </ul>
-        <br>
-        <h3>Just to name a few...</h3>
-</section>
-
-
-
-
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Inquiries</h2>
-        <p>Have questions, or want to discuss your data and IT infrastructure needs? Reach out to us using any of the options below:</p>
-
-        <div class="contact-details">
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:info@groshakdatasolutions.com">info@groshakdatasolutions.com</a></p>
+        <section id="services" class="block services-band">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="overline">What we do</span>
+                    <h2>Service Offerings</h2>
+                </div>
+                <div class="service-grid">
+                    <div class="service-tile reveal">
+                        <h3>Cyber Security Compliance</h3>
+                        <p>Ensure that your IT systems and processes meet industry security standards (GDPR, HIPAA, PIPEDA, CCPA/CPRA) and best practices, protecting your data and minimizing risks.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>AI Solutions</h3>
+                        <p>Custom AI models that generate highly specialized content or for scenarios where you want to ensure the privacy of your internal data.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>IT Infrastructure</h3>
+                        <p>Setting up and integrating IT systems tailored to your business needs.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>APIs</h3>
+                        <p>Development, integration, and testing for RESTful and SOAP APIs.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>Customer Analytics</h3>
+                        <p>Understand your customers' behavior, preferences, and needs, allowing you to provide them with better products and services.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>Custom Dashboards</h3>
+                        <p>Create custom dashboards that provide you with real-time data and insights, helping you stay on top of your business metrics.</p>
+                    </div>
+                    <div class="service-tile reveal">
+                        <h3>Predictive Analytics</h3>
+                        <p>Using advanced statistical techniques to help you forecast future trends and make informed business decisions.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="contact-item">
-                <h3>Phone | WhatsApp</h3>
-                <p><a href="https://wa.me/16046743385?text=Hi, I am interested in learning more about your data solutions at Groshak Data Solutions. Could we set up a time to chat about how you can help with my business's IT and data needs? Thanks!" target="_blank">+1.604.578.8094</a></p>
+        <section id="tools" class="block">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="overline">Our stack</span>
+                    <h2>Tools &amp; Languages</h2>
+                </div>
+
+                <div class="tool-group reveal">
+                    <h3>Data Science &amp; Machine Learning</h3>
+                    <ul class="tools-list">
+                        <li><span class="icon-tile"><img src="images/python-original.svg" alt="Python logo"></span>Python</li>
+                        <li><span class="icon-tile"><img src="images/R-original.webp" alt="R logo"></span>R</li>
+                        <li><span class="icon-tile"><img src="images/pandas-original.svg" alt="Pandas logo"></span>Pandas</li>
+                        <li><span class="icon-tile"><img src="images/NumPy-original.webp" alt="NumPy logo"></span>NumPy</li>
+                        <li><span class="icon-tile"><img src="images/SciPy-original.webp" alt="SciPy logo"></span>SciPy</li>
+                        <li><span class="icon-tile"><img src="images/Scikitlearn-original.svg" alt="Scikit-learn logo"></span>Scikit-learn</li>
+                        <li><span class="icon-tile"><img src="images/OpenCV-original.svg" alt="OpenCV logo"></span>OpenCV</li>
+                        <li><span class="icon-tile"><img src="images/Tensorflow-orignal.svg" alt="TensorFlow logo"></span>TensorFlow</li>
+                        <li><span class="icon-tile"><img src="images/pytorch-original.svg" alt="PyTorch logo"></span>PyTorch</li>
+                        <li><span class="icon-tile"><img src="images/apache-spark-original.webp" alt="Apache Spark logo"></span>Apache Spark</li>
+                        <li><span class="icon-tile"><img src="images/Matplotlib-original.png" alt="Matplotlib logo"></span>Matplotlib</li>
+                        <li><span class="icon-tile"><img src="images/Seaborn-original.svg" alt="Seaborn logo"></span>Seaborn</li>
+                        <li><span class="icon-tile"><img src="images/bokeh-original.webp" alt="Bokeh logo"></span>Bokeh</li>
+                        <li><span class="icon-tile"><img src="images/Highcharts-original.webp" alt="Highcharts logo"></span>Highcharts</li>
+                    </ul>
+                </div>
+
+                <div class="tool-group reveal">
+                    <h3>Databases</h3>
+                    <ul class="tools-list">
+                        <li><span class="icon-tile"><img src="images/postgresql-original.svg" alt="PostgreSQL logo"></span>PostgreSQL</li>
+                        <li><span class="icon-tile"><img src="images/mongoDB-original.webp" alt="MongoDB logo"></span>MongoDB</li>
+                        <li><span class="icon-tile"><img src="images/SQlite-original.svg" alt="SQLite logo"></span>SQLite</li>
+                        <li><span class="icon-tile"><img src="images/mysql-original.svg" alt="MySQL logo"></span>MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="tool-group reveal">
+                    <h3>Web, APIs &amp; Backend</h3>
+                    <ul class="tools-list">
+                        <li><span class="icon-tile"><img src="images/javascript-original.svg" alt="JavaScript logo"></span>JavaScript</li>
+                        <li><span class="icon-tile"><img src="images/php.svg" alt="PHP logo"></span>PHP</li>
+                        <li><span class="icon-tile"><img src="images/html5-original.svg" alt="HTML5 logo"></span>HTML5</li>
+                        <li><span class="icon-tile"><img src="images/css3-original.svg" alt="CSS3 logo"></span>CSS3</li>
+                        <li><span class="icon-tile"><img src="images/django-original.svg" alt="Django logo"></span>Django</li>
+                        <li><span class="icon-tile"><img src="images/Flask-original.svg" alt="Flask logo"></span>Flask</li>
+                        <li><span class="icon-tile"><img src="images/bootstrap-original.webp" alt="Bootstrap logo"></span>Bootstrap</li>
+                        <li><span class="icon-tile"><img src="images/stripe-original.svg" alt="Stripe logo"></span>Stripe</li>
+                        <li><span class="icon-tile"><img src="images/postman-original.svg" alt="Postman logo"></span>Postman</li>
+                        <li><span class="icon-tile"><img src="images/swaggerhub-original.svg" alt="SwaggerHub logo"></span>SwaggerHub</li>
+                    </ul>
+                </div>
+
+                <div class="tool-group reveal">
+                    <h3>Infrastructure &amp; Security</h3>
+                    <ul class="tools-list">
+                        <li><span class="icon-tile"><img src="images/docker-orignal.svg" alt="Docker logo"></span>Docker</li>
+                        <li><span class="icon-tile"><img src="images/kubernetes-original.webp" alt="Kubernetes logo"></span>Kubernetes</li>
+                        <li><span class="icon-tile"><img src="images/apache-cloudstack-orginal.webp" alt="Apache Cloudstack logo"></span>Apache Cloudstack</li>
+                        <li><span class="icon-tile"><img src="images/aws_light.svg" alt="AWS logo"></span>AWS Cloud</li>
+                        <li><span class="icon-tile"><img src="images/cloudflare.svg" alt="Cloudflare logo"></span>Cloudflare</li>
+                        <li><span class="icon-tile"><img src="images/nginx-original.svg" alt="Nginx logo"></span>Nginx</li>
+                        <li><span class="icon-tile"><img src="images/bash-orignal.svg" alt="Bash logo"></span>Bash</li>
+                        <li><span class="icon-tile"><img src="images/Linux-orignal.svg" alt="Linux logo"></span>Linux</li>
+                    </ul>
+                </div>
+
+                <p class="tools-note reveal">Just to name a few...</p>
             </div>
-            
+        </section>
 
-            <div class="contact-item">
-                <h3>Social</h3>
-                <p>
-                    <a href="https://www.linkedin.com/company/groshak-data-solutions" target="_blank">LinkedIn</a>
-                </p>
+        <section id="contact" class="block contact-band">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="overline">Contact</span>
+                    <h2>Inquiries</h2>
+                    <p>Have questions, or want to discuss your data and IT infrastructure needs? Reach out using any of the options below.</p>
+                </div>
+
+                <div class="contact-details">
+                    <a class="contact-item reveal" href="mailto:info@groshakdatasolutions.com">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p class="contact-value">info@groshakdatasolutions.com</p>
+                    </a>
+
+                    <a class="contact-item reveal" href="https://wa.me/16046743385?text=Hi, I am interested in learning more about your data solutions at Groshak Data Solutions. Could we set up a time to chat about how you can help with my business's IT and data needs? Thanks!" target="_blank" rel="noopener">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+                        </div>
+                        <h3>Phone | WhatsApp</h3>
+                        <p class="contact-value">+1.604.674.3385</p>
+                    </a>
+
+                    <a class="contact-item reveal" href="https://www.linkedin.com/company/groshak-data-solutions" target="_blank" rel="noopener">
+                        <div class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v2a6 6 0 0 1 2-2z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <h3>Social</h3>
+                        <p class="contact-value">LinkedIn</p>
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-
-
-
-
+        </section>
     </main>
+
+    <footer class="footer-section">
+        <div class="footer-content container">
+            <p>&copy; 2026 Groshak Data Solutions. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#business-cases">Business Cases</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.linkedin.com/company/groshak-data-solutions" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Floating particles in hero
+        (function () {
+            var host = document.querySelector('.hero-particles');
+            if (!host) return;
+            for (var i = 0; i < 28; i++) {
+                var p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 16 + 's';
+                p.style.animationDuration = (Math.random() * 10 + 12) + 's';
+                host.appendChild(p);
+            }
+        })();
+
+        // Reveal sections on scroll
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('visible'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 </body>
-
-<footer class="footer-section">
-    <div class="footer-content container">
-        <p>&copy; 2026 Groshak Data Solutions. All rights reserved.</p>
-
-    </div>
-</footer>
-
+</html>
